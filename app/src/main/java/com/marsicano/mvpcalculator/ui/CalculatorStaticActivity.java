@@ -1,6 +1,6 @@
 package com.marsicano.mvpcalculator.ui;
 
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import com.marsicano.mvpcalculator.R;
 
 
-public class CalculatorStaticActivity extends ActionBarActivity {
+public class CalculatorStaticActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

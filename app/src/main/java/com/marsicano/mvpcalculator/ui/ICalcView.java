@@ -5,7 +5,11 @@ package com.marsicano.mvpcalculator.ui;
  */
 public interface ICalcView {
 
-    void updateDisplay();
+    void updateDisplay(double value);
+
+    double getOperand1();
+
+    double getOperand2();
 
     void suscribe(IComputationListener listener);
 }
