@@ -1,12 +1,12 @@
 package com.marsicano.mvpcalculator;
 
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
+
 /**
  * Created by javier on 22/10/15.
  */
 
-@RunWith((MockitoJUnitRunner.class)
+@RunWith(MockitoJUnitRunner.class)
 public class CalcModelTest {
-    @Test
 }
