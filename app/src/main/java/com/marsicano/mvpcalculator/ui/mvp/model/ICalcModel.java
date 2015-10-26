@@ -1,11 +1,11 @@
-package com.marsicano.mvpcalculator.model;
+package com.marsicano.mvpcalculator.ui.mvp.model;
 
 /**
  * Created by javier on 20/10/15.
  */
 public interface ICalcModel {
 
-    double add(double op1,double op2);
+    double add(double op1, double op2);
 
     double mult(double op1, double op2);
 

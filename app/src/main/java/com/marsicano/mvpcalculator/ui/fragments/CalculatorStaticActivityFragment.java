@@ -1,4 +1,4 @@
-package com.marsicano.mvpcalculator.ui;
+package com.marsicano.mvpcalculator.ui.fragments;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
