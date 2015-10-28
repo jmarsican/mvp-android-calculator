@@ -17,11 +17,25 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets {
+        test {
+            resources {
+                srcDir "test"
+            }
+        }
+
+            androidTest {
+                setRoot('src/test')
+                java.srcDirs = ['src/test/java']
+            }
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:22.2.0'
-    androidTestCompile 'junit:junit:4.12'
-    androidTestCompile 'org.mockito:mockito-core:2.0.5-beta'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.0.5-beta'
+    androidTestCompile 'com.android.support.test:runner:0.3'
 }

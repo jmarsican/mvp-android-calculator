@@ -1,0 +1,27 @@
+package com.marsicano.mvpcalculator.ui.mvp.model;
+
+/**
+ * Created by javier on 28/10/15.
+ */
+public class HighLevelCalc implements ICalcModel {
+
+    @Override
+    public double add(double op1, double op2) {
+        return op1 + op2;
+    }
+
+    @Override
+    public double mult(double op1, double op2) {
+        return 0;
+    }
+
+    @Override
+    public double div(double op1, double op2) {
+        return 0;
+    }
+
+    @Override
+    public double sub(double op1, double op2) {
+        return 0;
+    }
+}
