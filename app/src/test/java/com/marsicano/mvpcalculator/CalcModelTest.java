@@ -27,4 +27,27 @@ public class CalcModelTest {
         double result = calculator.add(2,2);
         assertTrue(result == 4);
     }
+
+    @Test
+    public void testSub(){
+        double result = calculator.sub(2,2);
+        assertTrue(result == 0);
+    }
+
+    @Test
+    public void testMul(){
+        double result = calculator.mult(2, 2);
+        assertTrue(result == 4);
+    }
+
+    @Test
+    public void testDiv(){
+        double result = calculator.div(2, 2);
+        assertTrue(result == 1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testDivideByZeroException() {
+        calculator.div(2,0);
+    }
 }

@@ -12,16 +12,16 @@ public class HighLevelCalc implements ICalcModel {
 
     @Override
     public double mult(double op1, double op2) {
-        return 0;
+        return op1 * op2;
     }
 
     @Override
     public double div(double op1, double op2) {
-        return 0;
+        return op1 / op2;
     }
 
     @Override
     public double sub(double op1, double op2) {
-        return 0;
+        return op1 - op2;
     }
 }
