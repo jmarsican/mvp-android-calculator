@@ -1,19 +1,20 @@
 package com.marsicano.mvpcalculator.ui.activities;
 
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.marsicano.mvpcalculator.R;
 
-
-public class CalculatorStaticActivity extends FragmentActivity {
+/**
+ * Created by javier on 30/10/15.
+ */
+public class BaseActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calculator_static);
     }
 
 

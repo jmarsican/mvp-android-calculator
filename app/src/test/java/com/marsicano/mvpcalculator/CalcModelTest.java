@@ -25,25 +25,25 @@ public class CalcModelTest {
     @Test
     public void testAdd(){
         double result = calculator.add(2,2);
-        assertTrue(result == 4);
+        assertTrue("add operation returns wrong result", result == 4);
     }
 
     @Test
     public void testSub(){
         double result = calculator.sub(2,2);
-        assertTrue(result == 0);
+        assertTrue("subtraction operation returns wrong result",result == 0);
     }
 
     @Test
     public void testMul(){
         double result = calculator.mult(2, 2);
-        assertTrue(result == 4);
+        assertTrue("multiplication operation returns wrong result",result == 4);
     }
 
     @Test
     public void testDiv(){
         double result = calculator.div(2, 2);
-        assertTrue(result == 1);
+        assertTrue("division operation returns wrong result",result == 1);
     }
 
     @Test(expected = IllegalArgumentException.class)

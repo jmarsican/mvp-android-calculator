@@ -17,7 +17,10 @@ public class HighLevelCalc implements ICalcModel {
 
     @Override
     public double div(double op1, double op2) {
-        return op1 / op2;
+        if(op2 != 0)
+            return op1 / op2;
+        else
+            throw new IllegalArgumentException("cannot divide by zero");
     }
 
     @Override
