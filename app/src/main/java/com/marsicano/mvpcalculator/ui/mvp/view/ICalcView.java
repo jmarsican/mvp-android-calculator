@@ -1,7 +1,5 @@
 package com.marsicano.mvpcalculator.ui.mvp.view;
 
-import com.marsicano.mvpcalculator.ui.IComputationListener;
-
 /**
  * Created by javier on 20/10/15.
  */
@@ -14,4 +12,14 @@ public interface ICalcView {
     double getOperand2();
 
     void subscribe(IComputationListener listener);
+
+    interface IComputationListener {
+        void onAdd();
+
+        void onMult();
+
+        void onDiv();
+
+        void onSub();
+    }
 }
