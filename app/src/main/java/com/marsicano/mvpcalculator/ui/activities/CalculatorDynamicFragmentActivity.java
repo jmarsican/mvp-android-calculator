@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import com.marsicano.mvpcalculator.R;
 import com.marsicano.mvpcalculator.ui.fragments.CalculatorFirstLevelFragment;
 import com.marsicano.mvpcalculator.ui.fragments.CalculatorSecondLevelFragment;
+import com.marsicano.mvpcalculator.ui.fragments.CalculatorUserFriendly;
 import com.marsicano.mvpcalculator.ui.mvp.PresenterManager;
 import com.marsicano.mvpcalculator.ui.mvp.view.ICalcView;
 
@@ -18,7 +19,7 @@ public class CalculatorDynamicFragmentActivity extends BaseActivity implements C
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator_dynamic);
 
-        Fragment newFragment = new CalculatorFirstLevelFragment();
+        Fragment newFragment = new CalculatorUserFriendly();
 
         //bind to the corresponding presenter
         PresenterManager.getInstance().initCalcPresenter((ICalcView)newFragment);

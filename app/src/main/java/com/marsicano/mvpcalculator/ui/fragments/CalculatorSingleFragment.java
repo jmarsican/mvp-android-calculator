@@ -46,9 +46,6 @@ public class CalculatorSingleFragment extends Fragment implements ICalcView, Ada
 
         init();
 
-        //bind to the corresponding presenter
-        PresenterManager.getInstance().initCalcPresenter(this);
-
         return view;
     }
 
