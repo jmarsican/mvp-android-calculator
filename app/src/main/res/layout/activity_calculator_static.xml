@@ -2,6 +2,6 @@
           xmlns:tools="http://schemas.android.com/tools"
           android:id="@+id/fragment"
           android:name="com.marsicano.mvpcalculator.ui.fragments.CalculatorSingleFragment"
-          tools:layout="@layout/fragment_calculator_static"
+          tools:layout="@layout/fragment_calculator_single"
           android:layout_width="match_parent"
           android:layout_height="match_parent"/>
