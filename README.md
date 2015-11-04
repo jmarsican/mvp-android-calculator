@@ -12,3 +12,4 @@ User Stories:
 
 Class diagram: https://cacoo.com/diagrams/OVkhRLsmJGVb5GSp
 
+<iframe src="https://cacoo.com/diagrams/OVkhRLsmJGVb5GSp/view" width="402" height="330" frameborder="0" scrolling="no"></iframe>
