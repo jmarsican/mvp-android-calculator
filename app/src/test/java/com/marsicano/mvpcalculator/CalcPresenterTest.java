@@ -35,6 +35,7 @@ public class CalcPresenterTest {
         op2 = gui.getOperand2();
     }
 
+    // User Story [USMVP-3]
     @Test
     public void testDisplayAddResult() {
         presenter.onAdd();
@@ -44,6 +45,7 @@ public class CalcPresenterTest {
         verify(gui).updateDisplay(result);
     }
 
+    //User Story [USMVP-2]
     @Test
     public void testDisplaySubResult() {
         presenter.onSub();
@@ -53,6 +55,7 @@ public class CalcPresenterTest {
         verify(gui).updateDisplay(result);
     }
 
+    // User Story [USMVP-1]
     @Test
     public void testDisplayMulResult() {
         presenter.onMult();
@@ -62,6 +65,7 @@ public class CalcPresenterTest {
         verify(gui).updateDisplay(result);
     }
 
+    //User Story [USMVP-4]
     @Test
     public void testDisplayDivResult() {
         presenter.onDiv();
