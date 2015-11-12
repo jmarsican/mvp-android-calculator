@@ -11,4 +11,6 @@ User Stories:
 
 [USMVP-4] As a User I want to divide two numbers and see the result on a display
 
-Class diagram: https://cacoo.com/diagrams/OVkhRLsmJGVb5GSp
+Class diagram: 
+
+![](https://cacoo.com/diagrams/OVkhRLsmJGVb5GSp-6E7DC.png)
