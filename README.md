@@ -1,7 +1,7 @@
-# mvp-android-calculator
+# MVP Android Calculator
 This project aims to give a simple example of Model View Presenter pattern applying Presenter First with TDD approach
 
-User Stories:
+## User Stories:
 
 [USMVP-1] As a User I want to get the result of the multiplication of two numbers and see it on a display
 
@@ -11,6 +11,6 @@ User Stories:
 
 [USMVP-4] As a User I want to divide two numbers and see the result on a display
 
-Class diagram: 
+## Class diagram: 
 
 ![](https://cacoo.com/diagrams/OVkhRLsmJGVb5GSp-6E7DC.png)
