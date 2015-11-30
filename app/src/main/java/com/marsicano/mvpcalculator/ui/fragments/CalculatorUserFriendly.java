@@ -73,17 +73,7 @@ public class CalculatorUserFriendly extends Fragment implements ICalcView {
     }
 
     @Override
-    public double getOperand1() {
-        return 0;
-    }
-
-    @Override
-    public double getOperand2() {
-        return 0;
-    }
-
-    @Override
-    public void subscribe(IComputationListener listener) {
+    public void calculate(CalculationEvent event) {
 
     }
 }
