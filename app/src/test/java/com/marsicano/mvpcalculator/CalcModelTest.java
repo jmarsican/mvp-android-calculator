@@ -25,7 +25,7 @@ public class CalcModelTest {
     @Test
     public void testAdd(){
         double result = calculator.add(2,2);
-        assertTrue("add operation returns wrong result", result == 5);
+        assertTrue("add operation returns wrong result", result == 4);
     }
 
     @Test
