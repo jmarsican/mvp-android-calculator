@@ -18,6 +18,8 @@ import com.marsicano.mvpcalculator.ui.mvp.view.ICalcView;
 
 import java.util.ArrayList;
 
+import de.greenrobot.event.EventBus;
+
 
 /**
  * A placeholder fragment containing a simple view.
@@ -29,8 +31,6 @@ public class CalculatorFirstLevelFragment extends Fragment implements ICalcView,
     private EditText operand1;
     private EditText operand2;
     private Spinner operator;
-
-    private ArrayList<IComputationListener> subscribedListeners = new ArrayList<>();
 
     public CalculatorFirstLevelFragment() {
     }
@@ -83,30 +83,29 @@ public class CalculatorFirstLevelFragment extends Fragment implements ICalcView,
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String op1 = operand1.getText().toString();
+        String op2 = operand2.getText().toString();
+
         if(!TextUtils.isEmpty(operand1.getText()) && !TextUtils.isEmpty(operand2.getText())) {
+            //is required initialize event, add as default operation
+            CalculationEvent event = new AddEvent(Double.parseDouble(op1),Double.parseDouble(op2));
             //notifiy each subscribed listener to perform the calculation
             switch ((Operator) operator.getAdapter().getItem(position)) {
                 case ADD:
-                    for (IComputationListener listener : subscribedListeners) {
-                        listener.onAdd();
-                    }
+                    event = new AddEvent(Double.parseDouble(op1),Double.parseDouble(op2));
                     break;
                 case MUL:
-                    for (IComputationListener listener : subscribedListeners) {
-                        listener.onMult();
-                    }
+                    event = new MultEvent(Double.parseDouble(op1),Double.parseDouble(op2));
                     break;
                 case DIV:
-                    for (IComputationListener listener : subscribedListeners) {
-                        listener.onDiv();
-                    }
+                    event= new DivEvent(Double.parseDouble(op1),Double.parseDouble(op2));
                     break;
                 case SUB:
-                    for (IComputationListener listener : subscribedListeners) {
-                        listener.onSub();
-                    }
+                    event = new SubEvent(Double.parseDouble(op1),Double.parseDouble(op2));
                     break;
             }
+
+            calculate(event);
         }
     }
 
@@ -129,20 +128,8 @@ public class CalculatorFirstLevelFragment extends Fragment implements ICalcView,
     }
 
     @Override
-    public double getOperand1() {
-        String text = operand1.getText().toString();
-        return Double.parseDouble(text);
-    }
-
-    @Override
-    public double getOperand2() {
-        String text = operand2.getText().toString();
-        return Double.parseDouble(text);
-    }
-
-    @Override
-    public void subscribe(IComputationListener listener) {
-        subscribedListeners.add(listener);
+    public void calculate(CalculationEvent event) {
+        EventBus.getDefault().post(event);
     }
 
 }

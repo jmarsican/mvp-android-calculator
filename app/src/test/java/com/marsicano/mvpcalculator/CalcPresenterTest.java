@@ -31,14 +31,14 @@ public class CalcPresenterTest {
 
         presenter = new CalcPresenter(calculator,gui);
 
-        op1 = gui.getOperand1();
-        op2 = gui.getOperand2();
+        op1 = 2.0d;
+        op2 = 2.0d;
     }
 
     // User Story [USMVP-3]
     @Test
     public void testDisplayAddResult() {
-        presenter.onAdd();
+        presenter.onEvent(new ICalcView.AddEvent(op1,op2));
 
         double result = verify(calculator).add(op1, op2);
 
@@ -48,7 +48,7 @@ public class CalcPresenterTest {
     //User Story [USMVP-2]
     @Test
     public void testDisplaySubResult() {
-        presenter.onSub();
+        presenter.onEvent(new ICalcView.SubEvent(op1,op2));
 
         double result = verify(calculator).sub(op1, op2);
 
@@ -58,7 +58,7 @@ public class CalcPresenterTest {
     // User Story [USMVP-1]
     @Test
     public void testDisplayMulResult() {
-        presenter.onMult();
+        presenter.onEvent(new ICalcView.MultEvent(op1,op2));
 
         double result = verify(calculator).mult(op1, op2);
 
@@ -68,7 +68,7 @@ public class CalcPresenterTest {
     //User Story [USMVP-4]
     @Test
     public void testDisplayDivResult() {
-        presenter.onDiv();
+        presenter.onEvent(new ICalcView.DivEvent(op1,op2));
 
         double result = verify(calculator).div(op1, op2);
 

@@ -2,11 +2,14 @@ package com.marsicano.mvpcalculator.ui.mvp.presenter;
 
 import com.marsicano.mvpcalculator.ui.mvp.model.ICalcModel;
 import com.marsicano.mvpcalculator.ui.mvp.view.ICalcView;
+import com.marsicano.mvpcalculator.ui.mvp.view.ICalcView.*;
+
+import de.greenrobot.event.EventBus;
 
 /**
  * Created by javier on 20/10/15.
  */
-public class CalcPresenter implements ICalcView.IComputationListener {
+public class CalcPresenter {
     private ICalcModel model;
 
     private ICalcView gui;
@@ -19,30 +22,30 @@ public class CalcPresenter implements ICalcView.IComputationListener {
     }
 
     private void setListeners(){
-        gui.subscribe(this);
+        EventBus.getDefault().register(this);
     }
 
-    @Override
-    public void onAdd() {
-        double result = model.add(gui.getOperand1(), gui.getOperand2());
+
+    public void onEvent(AddEvent event) {
+        double result = model.add(event.getOp1(),event.getOp2());
         gui.updateDisplay(result);
     }
 
-    @Override
-    public void onMult() {
-        double result = model.mult(gui.getOperand1(), gui.getOperand2());
+
+    public void onEvent(MultEvent event) {
+        double result = model.mult(event.getOp1(),event.getOp2());
         gui.updateDisplay(result);
     }
 
-    @Override
-    public void onDiv() {
-        double result = model.div(gui.getOperand1(), gui.getOperand2());
+
+    public void onEvent(DivEvent event) {
+        double result = model.div(event.getOp1(),event.getOp2());
         gui.updateDisplay(result);
     }
 
-    @Override
-    public void onSub() {
-        double result = model.sub(gui.getOperand1(), gui.getOperand2());
+
+    public void onEvent(SubEvent event) {
+        double result = model.sub(event.getOp1(),event.getOp2());
         gui.updateDisplay(result);
     }
 }

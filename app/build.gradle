@@ -30,11 +30,15 @@ android {
                 java.srcDirs = ['src/test/java']
             }
     }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'de.greenrobot:eventbus:2.4.0'
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-all:1.10.19'
 }
